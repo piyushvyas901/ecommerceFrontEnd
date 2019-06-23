@@ -1,0 +1,16 @@
+<div class="row card-deck" *ngFor="let category of categoryList">
+  <div class="card text-center">
+      <div class="card-header">
+          <h4>{{category.name}}</h4>
+      </div>
+      <div class="card-body">
+          <div class="row">
+              <div class="col-4 padding-0">
+                  <button class="btn btn-primary" (click)="showProducts(category)"
+                          >Products
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

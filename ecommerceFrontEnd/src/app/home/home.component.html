@@ -1,0 +1,22 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<div class="container-fluid">
+
+    <div class="row" style="margin:auto; width: 70%; margin-top: 30px;">
+        <app-search-bar (onSelectedOption)="onSelectedOption($event)"></app-search-bar>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <app-category #categoryC (eventClicked)="categoryEventClicked($event)"></app-category>
+        </div>
+        <div class="col-md-4">
+            <app-products [productOrders]="productOrders" #productsC [hidden]="orderFinished"></app-products>
+        </div>
+        <div class="col-md-4">
+            <app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartC [hidden]="orderFinished">
+            </app-shopping-cart>
+        </div>
+        <div class="col-md-6 offset-3">
+            <app-orders #ordersC [hidden]="!orderFinished"></app-orders>
+        </div>
+    </div>
+</div>
